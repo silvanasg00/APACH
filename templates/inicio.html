@@ -1,0 +1,104 @@
+{% extends 'elementos/estructura.html' %}
+{% load static %}
+{% block contenido %}
+
+<div class="container">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'imagenes/adopcion1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'imagenes/adopcion2.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'imagenes/adopcion3.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<!--
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'imagenes/1.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'imagenes/2.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'imagenes/3.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <body style = "background-color:#fff8dc;"></body>
+          </div>
+    </div>
+
+
+
+
+
+
+
+
+-->
+
+    
+    <div class="container rounded border shadow-lg text-center p-5 mt-5 bg-warning text-dark">
+        <img class="d-block mx-auto mb-4">
+        <div class="col-lg-6 mx-auto">
+            <hr>
+            <p class="fs-3 ">
+                <b>APACH<br>ASOCIACIÓN PROTECTORA DE ANIMALES, CHARATA</b>
+                <br>
+                <br>
+                La fundación fue creada con el fin de apoyar los derechos de los animales, mediante programas, estrategias y actividades, buscando el bienestar para ellos.
+                <br>
+                <br>
+                <img src="{% static 'imagenes/logo.png' %}" alt="">
+            </p>
+        </div><br>
+    </div>
+    <br><br><br>
+  
+<footer class="footer py-2 bg-dark text-center text-white fixed-bottom">
+    <div class="container">
+        FUNDACIÓN PROTECTORA DE ANIMALES APACH - 2023 © COPYRIGHT
+    </div>
+</footer>
+
+
+
+
+
+
+
+{% endblock %}

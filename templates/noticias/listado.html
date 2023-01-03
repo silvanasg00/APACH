@@ -1,0 +1,40 @@
+{% extends 'elementos/estructura.html' %}
+{% block contenido %}
+    <div class="container cat p-3 text-center">
+        {% for categoria in categorias %}
+            <a href="{% url 'listado_de_categoria' categoria.id %}" class="btn bg-pink text-dark">{{categoria.nombre | upper}}</a>
+        {% endfor %}
+    </div>
+    <div class="container rounded border p-5 text-center bg-pink">
+        {% if categoria %}<h1>NOTICIAS DE CATEGORIA {{categoria.nombre | upper}} </h1><hr>
+        <a class="btn btn-pink form-control border-white text-dark" href="{% url 'listado_noticias' %}">VOLVER</a>
+        {% else %}
+        <h1>NOTICIAS</h1><hr>
+        {% endif %}
+        {% for noticia in noticias %}
+        <div class="row rounded border shadow-lg text-center p-5 mt-5 bg-pink text-dark">
+            <div class="col  m-5">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-3 text-center">{{ noticia.titulo | upper }}</h5><hr>
+                    <h6 class="card-subtitle fs-5 mb-2">{{ noticia.subtitulo | upper }}<br></h6><hr>
+                    {% if noticia.imagen %}
+                        <img src="{{ noticia.imagen.url }}" width="50%">
+                    {% endif %}
+                    <p class="card-text text-center">PUBLICADO POR <strong>{{ noticia.usuario | upper }}</strong> el {{ noticia.fecha_creacion }}</p><hr>
+                    <p class="card-text text-center">CATEGORIA: {{ noticia.categoria | upper }}</p>
+                    <a class="btn btn-light form-control border-white" href="{% url 'noticia' noticia.slug %}">VER NOTICIA</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div><br>
+    <div class="container">
+        {% if noticias.has_next %}
+            <a href="?page={{ noticias.next_page_number }}" class="btn btn-pink form-control">SIGUIENTE</a>
+        {% elif noticias.has_previous %}
+            <a href="?page={{ noticias.previous_page_number }}" class="btn btn-pink form-control">ANTERIOR</a>
+        {% endif %}
+    </div>
+    <br><br><br><br>
+    <body style = "background-color:#fff8dc;"></body>
+{% endblock %}

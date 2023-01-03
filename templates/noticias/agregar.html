@@ -1,0 +1,22 @@
+{% extends 'elementos/estructura.html' %}
+
+{% block contenido %}
+    {% load crispy_forms_tags %}
+    <div class="container bg-warning p-4">
+        <h1>AGREGAR NOTICIA</h1><hr>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <br><input type="submit" value="AGREGAR" class="form-control">
+        </form>
+    </div>
+    
+    <body style = "background-color:#fff8dc;"></body>
+
+    <footer class="footer py-2 bg-dark text-center text-white fixed-bottom">
+        <div class="container">
+            FUNDACIÓN PROTECTORA DE ANIMALES APACH - 2023 © COPYRIGHT
+        </div>
+    </footer>
+
+{% endblock %}

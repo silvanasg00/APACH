@@ -1,0 +1,37 @@
+{% extends 'elementos/estructura.html' %}
+
+{% block contenido %}
+    <div class="container rounded border p-5 text-center bg-warning text-dark">
+        {% for categoria in categorias %}
+            <a href="{% url 'listado_de_categoria_e' categoria.id %}" class="cat-link btn btn-pink">{{categoria.nombre | upper}}</a>
+        {% endfor %}
+        <div class="container rounded border p-5 text-center bg-light text-dark">
+            {% if categoria %}<h1> EVENTOS DE CATEGORIA {{categoria.nombre | upper}}</h1><hr>
+            <a class="btn btn-dark form-control border-white" href="{% url 'listado_eventos' %}">VOLVER</a>
+            {% else %}
+        <h1>EVENTOS</h1><hr>
+        {% endif %}
+        {% for evento in eventos %}
+        <div class="row">
+            <div class="card-body bg-dark-pink-gradient border border-dark m-4 p-5">
+                <h5 class="card-title text-center">{{ evento.nombre | upper }}</h5><hr>
+                <h5 class="card-title text-center">FECHA: {{ evento.fecha_evento.date }}</h5><hr>
+                <h5 class="card-title text-center">HORA: {{ evento.fecha_evento.time }}</h5><hr>
+                <h6 class="card-subtitle mb-2">LUGAR: {{ evento.ubicacion | upper }}<br></h6><hr>
+                <p class="card-text">DETALLES:  {{ evento.detalle | upper }}</p>
+                <p class="card-text">CATEGORIA/MODALIDAD: {{ evento.categoria | upper }}</p>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br><br><br>
+
+
+    <footer class="footer py-2 bg-dark text-center text-white fixed-bottom">
+        <div class="container">
+            FUNDACIÓN PROTECTORA DE ANIMALES APACH - 2023 © COPYRIGHT
+        </div>
+    </footer>
+    
+{% endblock %}

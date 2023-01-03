@@ -1,0 +1,23 @@
+{% extends 'elementos/estructura.html' %}
+
+{% block contenido %}
+    {% load crispy_forms_tags %}
+    <div class="container rounded border p-5 bg-warning">
+        <h1>INGRESAR</h1><hr>
+        <form class="" method="post">
+            {% csrf_token %}
+            {{ form | crispy }}
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
+            <br><input type="submit" value="INGRESAR" class="btn-pink form-control">
+        </form>
+    </div> <br><br><br><br>
+
+    <footer class="footer py-2 bg-dark text-center text-white fixed-bottom">
+        <div class="container">
+            FUNDACIÓN PROTECTORA DE ANIMALES APACH - 2023 © COPYRIGHT
+        </div>
+    </footer>
+    
+{% endblock %}

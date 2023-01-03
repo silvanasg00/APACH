@@ -1,0 +1,22 @@
+.bg-pink{
+    background-color: #f7c465;
+}
+
+.btn-cerrar-sesion{
+    background: none;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer; 
+}
+.btn-cerrar-sesion:hover{
+    color:white;
+}
+
+body{
+    background-color:#fff8dc;
+}
+
+.text-muted{
+    color:white !important;
+}

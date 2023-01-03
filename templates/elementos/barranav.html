@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg mb-3 py-3">
+    <div class="container-fluid">
+        <strong><a class="navbar-brand text-white" href="/">APACH</a></strong>
+        <button class="btn btn-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'inicio' %}">INICIO</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_noticias' %}">NOTICIAS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_eventos' %}">EVENTOS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'contacto'%}">CONTACTO</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'fundacion'%}">SOBRE NOSOTROS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'registrar' %}">REGISTRAR</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'ingresar' %}">INGRESAR</a></li>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_noticia' %}">CARGAR NOTICIA</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_evento' %}">CARGAR EVENTO</a></li>
+                    {% endif %}
+                    {% include "cerrar_sesion.html"  %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
